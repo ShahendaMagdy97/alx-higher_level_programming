@@ -6,14 +6,14 @@
 /**
  * struct listint_s - singly linked list
  * @z: integer
- * @nxt: points to the nxt node
+ * @next: points to the next node
  * Description: singly linked list node struct
  * for Holberton project
  */
 typedef struct listint_s
 {
 	int z;
-	struct listint_s *nxt;
+	struct listint_s *next;
 } listint_t;
 
 size_t print_listint(const listint_t *h);

@@ -14,10 +14,10 @@ int check_cycle(listint_t *list)
 
 	p2 = list;
 	prev = list;
-	while (list && p2 && p2->nxt)
+	while (list && p2 && p2->next)
 	{
-		list = list->nxt;
-		p2 = p2->nxt->nxt;
+		list = list->next;
+		p2 = p2->next->next;
 
 		if (list == p2)
 		{
@@ -26,14 +26,14 @@ int check_cycle(listint_t *list)
 			while (1)
 			{
 				p2 = prev;
-				while (p2->nxt != list && p2->nxt != prev)
+				while (p2->next != list && p2->next != prev)
 				{
-					p2 = p2->nxt;
+					p2 = p2->next;
 				}
-				if (p2->nxt == list)
+				if (p2->next == list)
 					break;
 
-				list = list->nxt;
+				list = list->next;
 			}
 			return (1);
 		}

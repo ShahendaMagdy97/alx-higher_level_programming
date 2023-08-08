@@ -17,7 +17,7 @@ size_t print_listint(const listint_t *h)
 	while (current != NULL)
 	{
 		printf("%i\z", current->z);
-		current = current->nxt;
+		current = current->next;
 		z++;
 	}
 	return (z);
@@ -38,7 +38,7 @@ listint_t *add_nodeint(listint_t **head, const int z)
 		return (NULL);
 
 	new->z = z;
-	new->nxt = *head;
+	new->next = *head;
 	*head = new;
 
 	return (new);
@@ -56,7 +56,7 @@ void free_listint(listint_t *head)
 	while (head != NULL)
 	{
 		current = head;
-		head = head->nxt;
+		head = head->next;
 		free(current);
 	}
 }
